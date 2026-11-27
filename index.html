@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Aura Rebuilt: a reverse-engineering accessibility interface demo." />
+  <title>Aura Rebuilt — Accessibility Demo</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+</head>
+<body data-profile="voyager" data-enforcing="true" data-clarity="false">
+ <a class="skip-link" href="#main">Skip to content</a>
+ <header class="topbar" data-target="UI ELEMENT">
+   <a class="logo" href="#main" aria-label="Aura Rebuilt home">AURA<span> / REBUILT</span></a>
+   <div class="tools">
+    <label class="field-label" for="profile">Accessibility profile</label>
+    <select id="profile" aria-label="Select accessibility profile">
+      <option value="voyager">The Voyager · Color Blind</option>
+      <option value="beacon">The Beacon · Low Vision</option>
+      <option value="focus">The Focus · Reduced Distraction</option>
+    </select>
+    <button id="enforce" type="button" class="primary">Stop Enforcement</button>
+    <label class="toggle" for="clarify"><input id="clarify" type="checkbox"/><span class="switch" aria-hidden="true"></span><span>Clarify Content</span></label>
+   </div>
+ </header>
+ <main id="main">
+   <section class="hero">
+    <div class="hero-copy">
+      <p class="pill">AURA ENFORCER <span>·</span> REVERSE ENGINEERING DEMO</p>
+      <h1 data-target="STRUCTURE">The Guardian of <em>Accessibility.</em></h1>
+      <p class="lead" id="intro">An interface inspired by the Aura demonstration. Switch accessibility profiles and see how a web page can become easier to read.</p>
+      <p class="clarification" id="clarified" hidden>In simple words: choose a mode, turn the highlights on, and see the page change.</p>
+      <div class="actions">
+       <button class="primary" id="trydemo" type="button">Run Demo Scan</button>
+       <button class="secondary" id="howitworks" type="button">How It Works</button>
+      </div>
+    </div>
+    <aside class="status" data-target="UI ELEMENT" aria-live="polite">
+      <div class="status-head"><span class="live-dot"></span> LOCAL DEMO STATUS</div>
+      <div class="status-detail"><span>Scanning:</span><strong id="scan-target">Example window</strong></div>
+      <div class="status-detail"><span>Checks completed:</span><strong id="fixes">0</strong></div>
+      <div class="status-detail"><span>Mode:</span><strong id="mode">ENFORCING</strong></div>
+      <div class="status-detail"><span>Profile:</span><strong id="profile-label">Voyager</strong></div>
+      <small>This is a browser demonstration. It does not scan real desktop apps.</small>
+    </aside>
+   </section>
+   <section id="details" class="details">
+    <div class="section-heading"><p class="eyebrow">A CLOSER LOOK</p><h2 data-target="STRUCTURE">Universal Empowerment</h2><p>Three examples of how an accessible interface can help different users.</p></div>
+    <div class="cards">
+     <article class="card" data-target="STRUCTURE"><div class="number">01 /</div><h3>Visual Enhancement</h3><p>Increase contrast and text spacing to improve readability for low-vision users.</p><span class="tag">LOW VISION</span></article>
+     <article class="card" data-target="STRUCTURE"><div class="number">02 /</div><h3>Color-Aware Design</h3><p>Do not rely only on colors. Use labels, borders, and clear written states.</p><span class="tag">COLOR ACCESS</span></article>
+     <article class="card" data-target="STRUCTURE"><div class="number">03 /</div><h3>Focused Reading</h3><p>Reduce distractions, use a calmer layout, and make important text easier to find.</p><span class="tag">READABILITY</span></article>
+    </div>
+   </section>
+   <section class="explanation" id="explanation" hidden>
+     <p class="eyebrow">HOW THIS RECONSTRUCTION WORKS</p>
+     <h2>Inputs → Logic → Output</h2>
+     <p><strong>Inputs:</strong> selected accessibility profile, enforcement button and clarification switch.</p>
+     <p><strong>Logic:</strong> JavaScript updates page state and CSS changes contrast, spacing, focus outlines and annotations.</p>
+     <p><strong>Output:</strong> the page visibly changes and a sample scan counter updates. No external apps are scanned or modified.</p>
+   </section>
+ </main>
+ <footer><span>AURA / REBUILT</span><span>Educational reverse-engineering prototype · 2026</span><span id="notice">Ready for demonstration</span></footer>
+</body>
+</html>
